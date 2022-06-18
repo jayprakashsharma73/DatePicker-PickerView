@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OjD-AA-UUa">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Date Picker-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Picker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="8hR-cm-kug">
+                                <rect key="frame" x="0.0" y="333" width="414" height="480"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="480" id="sqg-lN-Aum"/>
+                                </constraints>
+                            </datePicker>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z1X-er-VBT">
+                                <rect key="frame" x="93.5" y="123" width="227" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="1rc-8w-YfL"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Wheels"/>
+                                    <segment title="Compact"/>
+                                    <segment title="Inline"/>
+                                </segments>
+                                <connections>
+                                    <action selector="dateSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="dgE-7w-0ww"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date view" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiI-j0-gsD">
+                                <rect key="frame" x="67" y="196" width="281.5" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="Gde-CQ-Vfg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AiI-j0-gsD" firstAttribute="top" secondItem="z1X-er-VBT" secondAttribute="bottom" constant="42" id="4MG-jJ-bp5"/>
+                            <constraint firstItem="z1X-er-VBT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CDm-3b-y90"/>
+                            <constraint firstItem="8hR-cm-kug" firstAttribute="top" secondItem="AiI-j0-gsD" secondAttribute="bottom" constant="74" id="NYY-QV-oFn"/>
+                            <constraint firstItem="AiI-j0-gsD" firstAttribute="trailing" secondItem="z1X-er-VBT" secondAttribute="trailing" constant="28" id="Shd-b3-AIo"/>
+                            <constraint firstItem="8hR-cm-kug" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="d7g-bq-kkk"/>
+                            <constraint firstItem="8hR-cm-kug" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eUV-g5-LAI"/>
+                            <constraint firstItem="AiI-j0-gsD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="saN-CB-h9g"/>
+                            <constraint firstItem="z1X-er-VBT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="xK6-zu-2rF"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem width="681.5" id="cYV-ie-6c0"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Date Picker" id="3T6-Dd-b21">
+                        <barButtonItem key="rightBarButtonItem" title="Picker View" id="GLD-2t-q7e">
+                            <connections>
+                                <segue destination="z9h-Pk-3up" kind="show" id="cbW-vR-52C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="datePicker" destination="8hR-cm-kug" id="0Ks-XX-49y"/>
+                        <outlet property="datelabel" destination="AiI-j0-gsD" id="iIk-l0-mhU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="879.71014492753625" y="59.598214285714285"/>
+        </scene>
+        <!--Picker View-->
+        <scene sceneID="nCV-um-9tP">
+            <objects>
+                <viewController title="Picker View" id="z9h-Pk-3up" customClass="PickerViewController" customModule="Picker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gUk-wP-fXQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0to-fs-GSf">
+                                <rect key="frame" x="0.0" y="88" width="414" height="303"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="303" id="xd3-01-hZm"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33E-Oe-jrd">
+                                <rect key="frame" x="43" y="545" width="328" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bgS-6A-oPD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="33E-Oe-jrd" firstAttribute="top" secondItem="0to-fs-GSf" secondAttribute="bottom" constant="154" id="IlG-BU-wMb"/>
+                            <constraint firstItem="0to-fs-GSf" firstAttribute="trailing" secondItem="bgS-6A-oPD" secondAttribute="trailing" id="Tfe-A4-pg8"/>
+                            <constraint firstItem="0to-fs-GSf" firstAttribute="leading" secondItem="bgS-6A-oPD" secondAttribute="leading" id="a8M-KN-I8d"/>
+                            <constraint firstItem="33E-Oe-jrd" firstAttribute="leading" secondItem="bgS-6A-oPD" secondAttribute="leading" constant="43" id="eaE-hu-f50"/>
+                            <constraint firstItem="0to-fs-GSf" firstAttribute="top" secondItem="bgS-6A-oPD" secondAttribute="top" id="flt-yh-jWe"/>
+                            <constraint firstItem="bgS-6A-oPD" firstAttribute="trailing" secondItem="33E-Oe-jrd" secondAttribute="trailing" constant="43" id="hPJ-sM-CUx"/>
+                            <constraint firstItem="bgS-6A-oPD" firstAttribute="bottom" secondItem="33E-Oe-jrd" secondAttribute="bottom" constant="218" id="sYR-5Q-NWC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Picker View" id="tFD-PZ-Nxa"/>
+                    <connections>
+                        <outlet property="label" destination="33E-Oe-jrd" id="ooq-uS-6Y9"/>
+                        <outlet property="pickerView" destination="0to-fs-GSf" id="SDE-OA-Oi3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wIU-ik-bLO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1850.7246376811595" y="59.598214285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zd8-BV-05K">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="OjD-AA-UUa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OdU-oi-Ygl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I1y-ML-imy">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8WO-KF-lMk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUT-hy-ery" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-30.434782608695656" y="59.598214285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
